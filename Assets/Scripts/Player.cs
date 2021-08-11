@@ -27,12 +27,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         Movement();
-        if (CanShoot() && Input.GetButtonDown("Fire1") && ammo) Shoot();
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
             StartCoroutine(Dash());
         }
         if (canDash && Input.GetKeyDown(KeyCode.LeftShift)) { StartCoroutine(Dash()); }
+        if (CanShoot() && Input.GetButtonDown("Fire1") && ammo) Shoot();
     }
 
     bool CanShoot()
@@ -63,6 +63,7 @@ public class Player : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         diagonal = horizontal * vertical != 0 ? 0 : 1;
         movement = new Vector2(horizontal, vertical);
+
         if (horizontal != 0 || vertical != 0)
         {
             //is moving
@@ -104,6 +105,7 @@ public class Player : MonoBehaviour
         destruct = false;
         speed = speed_base;
         trail.emitting = false;
+        rb.velocity = -transform.up * speed;
 
     }
 

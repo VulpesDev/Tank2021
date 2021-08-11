@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SceneManage : MonoBehaviour
 {
+    public TextMeshProUGUI sceneTxt;
+
     static public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -21,12 +25,16 @@ public class SceneManage : MonoBehaviour
     }
     private void Update()
     {
-        if(SceneManager.GetActiveScene().name == "Tutorial2")
+        if(SceneManager.GetActiveScene().name == "Tutorial_2")
         {
             if(GameObject.FindGameObjectWithTag("Enemy") == null && GameObject.Find("Portal(Clone)") == null)
             {
                 Instantiate(Resources.Load<GameObject>("Portal"));
             }
+        }
+        if(sceneTxt.text != SceneManager.GetActiveScene().name)
+        {
+            sceneTxt.text = SceneManager.GetActiveScene().name;
         }
     }
 }

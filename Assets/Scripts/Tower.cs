@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TMPro;
 
 public class Tower : MonoBehaviour
 {
@@ -11,8 +12,13 @@ public class Tower : MonoBehaviour
     LineRenderer lr;
     public int HP = 3;
 
+    [Header("UI Components")]
     public GameObject panelG;
     public GameObject panelR;
+    public GameObject hp1, hp2, hp3;
+    //NOT USED
+    public TextMeshProUGUI towerText;
+    //NOT USED
 
 
 
@@ -51,6 +57,8 @@ public class Tower : MonoBehaviour
 
         if (player == null) return;
 
+        UpdateHPUI();
+
         lookDir = playerTr.position - transform.position;
         lookDir = lookDir.normalized;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, lookDir, Vector2.Distance(transform.position,
@@ -81,6 +89,31 @@ public class Tower : MonoBehaviour
                 panelG.SetActive(false);
                 panelR.SetActive(true);
             }
+        }
+    }
+    void UpdateHPUI()
+    {
+        //towerText.text = "Tower's HP: "+HP;
+        if(HP==2)
+        {
+            hp3.SetActive(false);
+        }
+        else if (HP == 1)
+        {
+            hp2.SetActive(false);
+            hp3.SetActive(false);
+        }
+        else if (HP <= 0)
+        {
+            hp1.SetActive(false);
+            hp2.SetActive(false);
+            hp3.SetActive(false);
+        }
+        else
+        {
+            hp1.SetActive(true);
+            hp2.SetActive(true);
+            hp3.SetActive(true);
         }
     }
 }
