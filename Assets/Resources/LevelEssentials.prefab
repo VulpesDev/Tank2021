@@ -2649,6 +2649,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1212033333952741304}
     - target: {fileID: 6997142765721617562, guid: 126843aa0ebc5c041af7f57e139de1ce, type: 3}
+      propertyPath: sceneTxt
+      value: 
+      objectReference: {fileID: 3470360001711536906}
+    - target: {fileID: 6997142765721617562, guid: 126843aa0ebc5c041af7f57e139de1ce, type: 3}
       propertyPath: towerText
       value: 
       objectReference: {fileID: 7189616630118287901}

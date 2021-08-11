@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Tower : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Tower : MonoBehaviour
     public TextMeshProUGUI towerText;
     //NOT USED
 
-
+    public TextMeshProUGUI sceneTxt;
 
     private void Awake()
     {
@@ -29,6 +30,10 @@ public class Tower : MonoBehaviour
         pScript = player.GetComponent<Player>();
         layerMask = 1 << LayerMask.NameToLayer("PRaycast");
         lr = transform.parent.GetChild(1).GetComponent<LineRenderer>();
+        if(sceneTxt.text != SceneManager.GetActiveScene().name)
+        {
+            sceneTxt.text = SceneManager.GetActiveScene().name;
+        }
     }
 
     Vector3[] positions = new Vector3[2];

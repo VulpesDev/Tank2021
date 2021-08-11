@@ -5,8 +5,6 @@ using TMPro;
 
 public class SceneManage : MonoBehaviour
 {
-    public TextMeshProUGUI sceneTxt;
-
     static public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -32,9 +30,6 @@ public class SceneManage : MonoBehaviour
                 Instantiate(Resources.Load<GameObject>("Portal"));
             }
         }
-        if(sceneTxt.text != SceneManager.GetActiveScene().name)
-        {
-            sceneTxt.text = SceneManager.GetActiveScene().name;
-        }
+
     }
 }
