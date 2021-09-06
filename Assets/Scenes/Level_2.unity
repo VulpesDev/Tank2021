@@ -988,6 +988,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelEssentials
       objectReference: {fileID: 0}
+    - target: {fileID: 3531094326550263783, guid: 1db434c6c34e0e74ba789455ccab8b38, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.6000061
+      objectReference: {fileID: 0}
+    - target: {fileID: 7982457485530794981, guid: 1db434c6c34e0e74ba789455ccab8b38, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.79999924
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1db434c6c34e0e74ba789455ccab8b38, type: 3}
 --- !u!1001 &291722276
